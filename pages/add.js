@@ -10,7 +10,7 @@ const AddProduct = () => {
 
     const saveProduct = async e => {
         e.preventDefault()
-        await axios.post('http://localhost:3000/api/products', {
+        await axios.post('/api/products', {
             name: name,
             price: parseInt(price),
         })

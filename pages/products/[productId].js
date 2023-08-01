@@ -11,9 +11,7 @@ const EditProduct = () => {
 
     useEffect(() => {
         const getProductById = async () => {
-            const response = await axios.get(
-                `http://localhost:3000/api/products/${productId}`,
-            )
+            const response = await axios.get(`/api/products/${productId}`)
             setName(response.data.name)
             setPrice(response.data.price)
         }
@@ -22,7 +20,7 @@ const EditProduct = () => {
 
     const updateProduct = async e => {
         e.preventDefault()
-        await axios.patch(`http://localhost:3000/api/products/${productId}`, {
+        await axios.patch(`/api/products/${productId}`, {
             name: name,
             price: parseInt(price),
         })
